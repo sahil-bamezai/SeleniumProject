@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--use this for regular execution-->
+<!--<suite name="API Automation Session Smoke Suite">-->
+
+<!--use this when need to run classes parallely-->
+<suite name="UI Automation Session Smoke Test Suite" parallel = "classes" thread-count="5">
+
+
+    <test name="Smoke Test Suite">
+
+
+        <groups>
+            <run>
+                <include name="SmokeSuite"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.LoginTest" />
+        </classes>
+    </test>
+</suite>

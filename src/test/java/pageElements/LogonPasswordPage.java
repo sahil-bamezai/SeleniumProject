@@ -16,6 +16,8 @@ public class LogonPasswordPage {
     }
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+//    driver.manage().timeout().implicitlyWaits()
+
     private By passwordElement = (By.xpath("//input[@id='ap_password']"));
     private By signInSubmit = By.id("signInSubmit");
 

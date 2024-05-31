@@ -23,8 +23,16 @@ public class HomePageWebElements {
     }
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+
+
     private By accountAndLists = By.xpath("//a[@id='nav-link-accountList']");
     private By signInButton = (By.cssSelector(".nav-action-signin-button"));
+    private By helloElement = By.id("nav-link-accountList-nav-line-1");
+    private By searchBar = By.id("#twotabsearchtextbox");
+
+    private By allSearchDropdownButton = By.id("#searchDropdownBox");
+    private By allButton = By.id("nav-hamburger-menu");
+    private By searchButton = By.id("nav-search-submit-button");
 
 
 
@@ -52,5 +60,10 @@ public class HomePageWebElements {
     public boolean isSignButtonDisplayed() {
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(signInButton)));
         return driver.findElement(signInButton).isDisplayed();
+    }
+
+    public boolean isLoggedIn() {
+        return wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(helloElement), "Hello, Sahil") );
+//        return driver.findElement(helloElement).isDisplayed();
     }
 }
